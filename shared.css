@@ -1,0 +1,140 @@
+/* Shared Utilities - Optimized for Performance */
+
+/* Smooth Scrolling for All Pages */
+* {
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+/* Performance Optimizations */
+img, video {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Universal Smooth Transitions */
+a, button, input, textarea, select {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Donate Button - Used across all pages */
+.donate-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #6a0dad, #8a2be2);
+    color: #fff;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(106, 13, 173, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    will-change: transform, box-shadow;
+}
+
+.donate-btn:hover {
+    background: linear-gradient(135deg, #8a2be2, #6a0dad);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.5);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .donate-btn {
+        padding: 8px 16px;
+        font-size: 12px;
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+/* Social Media Links - Footer */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, background;
+}
+
+.social-link i {
+    font-size: 1rem;
+    color: white;
+}
+
+.social-link:hover {
+    background: #6A0DAD !important;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Common Button Styles */
+.btn-gradient-purple {
+    background: linear-gradient(135deg, #6a0dad, #8a2be2);
+    color: white;
+}
+
+.btn-gradient-purple:hover {
+    background: linear-gradient(135deg, #8a2be2, #6a0dad);
+}
+
+/* Loading Animation */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.loading i {
+    font-size: 2rem;
+    color: #6a0dad;
+}
+
+/* Section Title Common Style */
+.section-title h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+/* Mobile Responsive Improvements */
+@media (max-width: 768px) {
+    .social-links {
+        justify-content: center !important;
+        gap: 20px !important;
+        flex-wrap: wrap;
+    }
+
+    .social-link {
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+    }
+
+    .social-link i {
+        font-size: 1.1rem !important;
+        color: white !important;
+    }
+}

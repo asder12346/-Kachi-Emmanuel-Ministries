@@ -1,0 +1,169 @@
+
+/* === Navbar Animation & Mobile Menu Enhancements === */
+#header {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+}
+#header.scrolled {
+    background: var(--white);
+    box-shadow: none;
+    backdrop-filter: none;
+}
+#header.hidden {
+    transform: translateY(-100%);
+}
+#header.visible {
+    transform: translateY(0);
+}
+.nav-link.active {
+    color: var(--light-purple);
+}
+.nav-link.active::after {
+    width: 100%;
+}
+.nav-link.underlined::after, .mobile-nav-link.underlined::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--light-purple);
+    transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+    margin-top: 2px;
+}
+.nav-link.underlined:hover::after, .mobile-nav-link.underlined:hover::after {
+    width: 100%;
+}
+
+/* Mobile Menu Animation */
+.mobile-nav {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.mobile-nav.active {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
+}
+
+.mobile-nav-link {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+.mobile-nav.active .mobile-nav-link {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: calc(var(--i) * 0.1s);
+}
+
+.mobile-nav.open .mobile-nav-link:nth-child(1) { transition-delay: 0.1s; }
+.mobile-nav.open .mobile-nav-link:nth-child(2) { transition-delay: 0.15s; }
+.mobile-nav.open .mobile-nav-link:nth-child(3) { transition-delay: 0.2s; }
+.mobile-nav.open .mobile-nav-link:nth-child(4) { transition-delay: 0.25s; }
+.mobile-nav.open .mobile-nav-link:nth-child(5) { transition-delay: 0.3s; }
+.mobile-nav.open .mobile-nav-link:nth-child(6) { transition-delay: 0.35s; }
+.mobile-nav.open .mobile-nav-link:nth-child(7) { transition-delay: 0.4s; }
+.mobile-nav.open .mobile-nav-link:nth-child(8) { transition-delay: 0.45s; }
+.mobile-nav.open .mobile-nav-link:nth-child(9) { transition-delay: 0.5s; }
+
+.menu-open #mobile-menu i {
+    transform: rotate(90deg);
+}
+#mobile-menu i {
+    transition: transform 0.3s ease;
+}
+
+/* === Mobile Responsiveness === */
+@media (max-width: 768px) {
+    .nav-links-wrapper {
+        display: none;
+    }
+    
+    .hamburger {
+        display: block !important;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        color: var(--primary-purple);
+        font-size: 1.5rem;
+    }
+    
+    .mobile-nav {
+        background: rgba(255, 255, 255, 0.98);
+        border-top: 1px solid rgba(106, 13, 173, 0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transform: translateX(100%);
+        opacity: 0;
+        pointer-events: none;
+        animation: none;
+    }
+    .mobile-nav.open {
+        animation: mobileNavSlideIn 0.4s cubic-bezier(0.4,0,0.2,1) forwards;
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+    .mobile-nav.closing {
+        animation: mobileNavSlideOut 0.35s cubic-bezier(0.4,0,0.2,1) forwards;
+        opacity: 0;
+        pointer-events: none;
+    }
+    @keyframes mobileNavSlideIn {
+        from {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    @keyframes mobileNavSlideOut {
+        from {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        to {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+    }
+    
+    .mobile-nav-link {
+        display: block;
+        padding: 12px 0;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-nav-link:hover,
+    .mobile-nav-link.active {
+        color: var(--light-purple);
+        padding-left: 10px;
+    }
+    
+    .mobile-nav .flex {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none !important;
+    }
+    
+    .mobile-nav {
+        display: none !important;
+    }
+    
+    .nav-links-wrapper {
+        display: block;
+    }
+}

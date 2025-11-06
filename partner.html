@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner - Kachi Emmanuel Ministries | Support Our Mission</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="partner.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="navbar-animations.css">
+    <link rel="stylesheet" href="devotional-popup.css">
+    <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+    <!-- Barista Cafe Style Navigation -->
+    <div class="km-navbar-wrapper">
+        <nav class="km-navbar">
+            <div class="container km-container">
+                <!-- Brand/Logo -->
+                <a href="index.html" class="km-brand">
+                    <span>Kachi Emmanuel Ministries</span>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <div class="km-nav" id="navMenu">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="ministry.html">Ministry</a>
+                    <a href="partner.html" class="active">Partner</a>
+                </div>
+
+                <!-- Mobile Hamburger Toggle -->
+                <button class="km-toggler" id="navToggler" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="km-bar"></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 style="font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;">Partner With Us</h1>
+            <p>Join us in spreading the Gospel and transforming lives through your prayers, service, and financial support.</p>
+            <a href="#donate" class="btn" style="background: linear-gradient(135deg, #6a0dad, #8a2be2); color: white;">Donate Now</a>
+        </div>
+    </section>
+    
+    <style>
+    .hero {
+      position: relative;
+      height: 60vh;
+      width: 100%;
+      background: url('1.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 0;
+      padding-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding-top: 150px;
+      }
+    }
+
+    /* Dark overlay (linen effect using gradient + opacity) */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+      color: white;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      color: #ffde59;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #2ecc71;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.3s;
+      margin: 0 10px;
+    }
+
+    .btn:hover {
+      background-color: #27ae60;
+      transform: translateY(-3px);
+    }
+    </style>
+
+    <!-- Partnership Intro -->
+    <section class="partnership-intro">
+        <div class="container">
+            <div class="intro-content">
+                <h1 style="font-size: 2rem; color:white">Kingdom Partnership</h1>
+                <p>Your partnership enables us to reach more souls, produce life-changing media content, and support communities in need. Together, we can make an eternal impact for the Kingdom of God.</p>
+                <a href="#donate" class="btn btn-primary" style="color: white;">Become a Partner Today</a>
+                
+                <div class="impact-stats">
+                    <div class="impact-stat">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-text">Lives Impacted</div>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-text">Countries Reached</div>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-text">Media Productions</div>
+                    </div>
+                    <div class="impact-stat">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-text">Community Projects</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Options -->
+    <section class="donation-section" id="donate">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="font-size: 2rem; color:white">Support Options</h2>
+            </div>
+            <div class="donation-options">
+                <div class="donation-option">
+                    <div class="donation-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>One-Time Gift</h3>
+                    <p>Make a single donation to support specific ministry projects and outreach programs.</p>
+                    
+                    <div class="donation-amounts">
+                        <div class="amount-option" data-amount="25">$25</div>
+                        <div class="amount-option" data-amount="50">$50</div>
+                        <div class="amount-option" data-amount="100">$100</div>
+                        <div class="amount-option" data-amount="250">$250</div>
+                    </div>
+                    
+                    <div class="custom-amount" style="display: flex; justify-content: center; margin: 1rem 0;">
+                        <input type="number" id="customOneTime" placeholder="Custom amount" min="1" style="width: 150px;">
+                    </div>
+                    <div style="padding-top: 1rem"></div>
+                    <button class="btn btn-outline" onclick="selectDonationType('one-time')" style="color: var(--primary-purple); background: white; font-weight: 700;">Give One-Time Gift</button>
+                </div>
+                
+                <div class="donation-option">
+                    <div class="donation-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Monthly Partnership</h3>
+                    <p>Become a monthly partner to provide consistent support for ongoing ministry operations.</p>
+                    
+                    <div class="donation-amounts">
+                        <div class="amount-option" data-amount="25">$25</div>
+                        <div class="amount-option" data-amount="50">$50</div>
+                        <div class="amount-option" data-amount="100">$100</div>
+                        <div class="amount-option" data-amount="250">$250</div>
+                    </div>
+                    
+                    <div class="custom-amount" style="display: flex; justify-content: center; margin: 1rem 0;">
+                        <input type="number" id="customMonthly" placeholder="Custom amount" min="1" style="width: 150px;">
+                    </div> 
+                    <div style="padding-top: 1rem"></div>
+                    <button class="btn btn-outline" onclick="selectDonationType('monthly')" style="color: var(--primary-purple); background: white; font-weight: 700;">Become Monthly Partner</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment-section" id="payment">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="font-size: 2rem; color:white">Make Your Donation</h2>
+            </div>
+            <div class="payment-container">
+                <div class="payment-header">
+                    <h3>Complete Your Donation</h3>
+                    <div style="text-align: center; margin: 15px 0 25px;">
+                        <i class="fas fa-hand-holding-heart" style="font-size: 2.5rem; color: var(--primary-purple);"></i>
+                    </div>
+                    <p id="donationSummary">One-time gift of $50</p>
+                </div>
+            
+                
+                <div class="payment-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="amount">Amount ($)</label>
+                            <input type="number" id="amount" class="form-control" value="50" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="donationType">Donation Type</label>
+                            <select id="donationType" class="form-control">
+                                <option value="one-time">One-Time Gift</option>
+                                <option value="monthly">Monthly Partnership</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="payment-submit">
+                        <button class="btn btn-primary" id="processPayment">Process Donation</button>
+                    </div>
+                    
+                    <div id="paymentSuccess" class="payment-success">
+                        <i class="fas fa-check-circle"></i> Thank you for your donation! Your support is making a difference.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Kachi Emmanuel Ministries</div>
+                    <p class="footer-quote">"Ministering through Creativity for the Kingdom of God"</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="ministry.html">Ministry</a></li>
+                        <li><a href="partner.html">Partner</a></li>
+                        <li><a href="index.html #contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="devotionals.html">Sermons</a></li>
+                        <li><a href="devotionals.html">Devotionals</a></li>
+                        <li><a href="ministry.html">Events</a></li>
+                        <li><a href="devotionals.html">Blog</a></li>
+                        <li><a href="index.html#contact">Prayer Requests</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a target="_blank" href="https://www.facebook.com/share/1FgQffzLr6/?mibextid=wwXIfr" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/thebelieversperspective_?igsh=MTV0czVrMmRtZmpnNQ%3D%3D&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" href="https://youtube.com/@kachiemmanuelministries?si=6v0vK6vX9GMjh8D7" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" href="https://www.tiktok.com/@thebelieversperspective?_t=ZS-90d0KigCOSW&_r=1" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Kachi Emmanuel Ministries. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Donate Button -->
+    <a href='partner.html' class='donate-btn'><i class='fas fa-heart'></i> Support Us</a>
+
+    <style>
+      .donate-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #6a0dad, #8a2be2);
+        color: #fff;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 30px;
+        box-shadow: 0 4px 15px rgba(106, 13, 173, 0.4);
+        transition: all 0.3s ease;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      .donate-btn:hover {
+        background: linear-gradient(135deg, #8a2be2, #6a0dad);
+        box-shadow: 0 6px 20px rgba(138, 43, 226, 0.5);
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 768px) {
+        .donate-btn {
+          padding: 8px 16px;
+          font-size: 12px;
+          right: 10px;
+          bottom: 10px;
+        }
+      }
+    </style>
+
+    <!-- Exit Intent Donation Popup -->
+    <div id="donationPopup" class="donation-popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h3>Before You Go...</h3>
+            <p>Would you consider supporting our ministry with a donation?</p>
+            <div class="popup-buttons">
+                <a href="partner.html" class="btn btn-popup">Donate Now</a>
+                <button class="btn btn-popup-secondary">Not Now</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+      .donation-popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+      
+      .donation-popup.show {
+        opacity: 1;
+      }
+      
+      .popup-content {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        max-width: 400px;
+        text-align: center;
+        position: relative;
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+      }
+      
+      .donation-popup.show .popup-content {
+        transform: translateY(0);
+      }
+      
+      .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      
+      .popup-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+        justify-content: center;
+      }
+      
+      .btn-popup {
+        background: linear-gradient(135deg, #6a0dad, #8a2be2);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+      
+      .btn-popup-secondary {
+        background: #f0f0f0;
+        color: #333;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+
+    <script>
+      let mouseY = 0;
+      
+      document.addEventListener('mousemove', function(e) {
+        mouseY = e.clientY;
+      });
+      
+      // Exit intent detection
+      document.addEventListener('mouseout', function(e) {
+        if (e.clientY < 50 && mouseY > 50) { // Moving towards top of window
+          // Check if popup was shown recently
+          if (!localStorage.getItem('popupShown') || 
+              (Date.now() - localStorage.getItem('popupShown')) > 86400000) { // 24 hours
+            showDonationPopup();
+            localStorage.setItem('popupShown', Date.now());
+          }
+        }
+      });
+      
+      // Close popup handlers
+      document.querySelector('.close-popup').addEventListener('click', hideDonationPopup);
+      document.querySelector('.btn-popup-secondary').addEventListener('click', hideDonationPopup);
+      
+      function showDonationPopup() {
+        const popup = document.getElementById('donationPopup');
+        popup.style.display = 'flex';
+        setTimeout(() => popup.classList.add('show'), 10);
+      }
+      
+      function hideDonationPopup() {
+        const popup = document.getElementById('donationPopup');
+        popup.classList.remove('show');
+        setTimeout(() => popup.style.display = 'none', 300);
+      }
+    </script>
+
+    <script>
+      // Barista Cafe Style Navigation Toggle
+      const navToggler = document.getElementById('navToggler');
+      const navMenu = document.getElementById('navMenu');
+      
+      if (navToggler && navMenu) {
+        navToggler.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const isExpanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !isExpanded);
+          navMenu.classList.toggle('show');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.km-nav a').forEach(link => {
+          link.addEventListener('click', () => {
+            navMenu.classList.remove('show');
+            navToggler.setAttribute('aria-expanded', 'false');
+          });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!navMenu.contains(e.target) && !navToggler.contains(e.target)) {
+            navMenu.classList.remove('show');
+            navToggler.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+    </script>
+
+    <script src="partner.js"></script>
+    <!-- Devotional Side Popup -->
+    <div id="devotionalPopup" class="devotional-popup">
+        <div class="devotional-popup-content">
+            <span class="devotional-close" onclick="document.getElementById('devotionalPopup').style.display='none'">&times;</span>
+            <div class="devotional-popup-text" onclick="window.location.href='devotionals.html'">
+                <i class="fas fa-book-open"></i>
+                <span style="font-size:0.97rem;">Todays Devotional</span>
+            </div>
+        </div>
+    </div>
+    <script>
+      function showDevotionalPopup() {
+        var popup = document.getElementById('devotionalPopup');
+        popup.style.display = 'block';
+      }
+      function hideDevotionalPopup() {
+        var popup = document.getElementById('devotionalPopup');
+        popup.style.display = 'none';
+      }
+      window.addEventListener('DOMContentLoaded', function() {
+        setInterval(function() {
+          showDevotionalPopup();
+        }, 10000);
+      });
+      document.querySelector('.devotional-close').onclick = hideDevotionalPopup;
+      document.querySelector('.devotional-popup-text').onclick = function() {
+        window.location.href = 'devotionals.html';
+      };
+    </script>
+</body>
+</html>

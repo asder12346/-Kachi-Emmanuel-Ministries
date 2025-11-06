@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kachi Emmanuel Ministries | Devotional Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="devotionals.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="shared.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="km-navbar-wrapper">
+        <header class="km-navbar">
+            <div class="container km-container">
+                <a href="index.html" class="km-brand">
+                    <span class="fa-solid fa-arrow-left"></span>
+                    <span>Menu</span>
+                </a>
+            </div>
+        </header>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 style="font-weight: bold; font-family: Georgia, 'Times New Roman', Times, serif;">Daily Devotionals</h1>
+            <p>Nourish your spirit with biblical teachings and practical insights for daily living</p>
+        </div>
+    </section>
+    
+    <style>
+    .hero {
+      position: relative;
+      height: 50vh;
+      width: 100%;
+      background: url('12.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px 0 20px;
+      margin-top: 0;
+    }
+
+    /* Dark overlay (linen effect using gradient + opacity) */
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      line-height: 1.2;
+      color: white;
+      font-family: 'Merriweather', serif;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      color: #eee;
+      font-family: 'Inter', sans-serif;
+    }
+    </style>
+
+    <!-- Devotional Filters -->
+    <section class="devotional-filters">
+        <div class="container">
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Devotionals</button>
+                <button class="filter-btn" data-filter="faith">Faith</button>
+                <button class="filter-btn" data-filter="purpose">Purpose</button>
+                <button class="filter-btn" data-filter="prayer">Prayer</button>
+                <button class="filter-btn" data-filter="growth">Spiritual Growth</button>
+                <button class="filter-btn" data-filter="relationships">Relationships</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <section class="blog-content">
+        <div class="container">
+            <!-- Featured Devotionals -->
+            <div class="featured-devotionals-grid">
+                <div class="featured-devotional">
+                    <div class="featured-content">
+                        <span class="featured-badge">Featured Devotional</span>
+                        <h2 class="featured-title">Walking in God's Purpose</h2>
+                        <p class="featured-excerpt">Discover how to align your life with God's divine plan and experience the fulfillment that comes from walking in purpose. This devotional explores Jeremiah 29:11 and what it means for your life today.</p>
+                        <button class="read-more" data-id="1">Read Full Devotional</button>
+                    </div>
+                </div>
+                
+                <div class="featured-devotional">
+                    <div class="featured-content">
+                        <span class="featured-badge">Featured Devotional</span>
+                        <h2 class="featured-title">Faith Over Fear</h2>
+                        <p class="featured-excerpt">Learn to overcome anxiety and worry by placing your trust in God. This powerful devotional examines Philippians 4:6-7 and provides practical steps to walk in faith instead of fear.</p>
+                        <button class="read-more" data-id="2">Read Full Devotional</button>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Recent Devotionals</h2>
+            
+            <div id="blog-container" class="blog-grid">
+                <!-- Blog posts will be loaded here from Google Sheets -->
+                <div class="loading">
+                    <i class="fas fa-spinner fa-spin"></i> Loading devotionals...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Post Modal -->
+    <div class="blog-modal" id="blog-modal">
+        <div class="modal-content">
+            <button class="close-modal" id="close-modal">&times;</button>
+            <div class="modal-body">
+                <span class="modal-category" id="modal-category">Devotional</span>
+                <h1 class="modal-title" id="modal-title">Devotional Title</h1>
+                <div class="modal-meta">
+                    <span class="modal-date" id="modal-date">October 17, 2023</span>
+                    <span class="modal-author"><i class="fas fa-user"></i> <span id="modal-author">Kachi Emmanuel</span></span>
+                </div>
+                <div class="modal-text" id="modal-text">
+                    <!-- Full devotional content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Kachi Emmanuel Ministries</div>
+
+                    <p class="footer-quote">"For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future." - Jeremiah 29:11</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="ministry.html">Ministries </a></li>
+                        <li><a href="partner.html">Partner</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="devotionals.html">Devotionals</a></li>
+                        <li><a href="ministry.html">Events</a></li>
+                        <li><a href="#contact">Prayer Requests</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a target="_blank" href="https://www.facebook.com/share/1FgQffzLr6/?mibextid=wwXIfr" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/thebelieversperspective_?igsh=MTV0czVrMmRtZmpnNQ%3D%3D&utm_source=qr" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a target="_blank" href="https://youtube.com/@kachiemmanuelministries?si=6v0vK6vX9GMjh8D7" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a target="_blank" href="https://www.tiktok.com/@thebelieversperspective?_t=ZS-90d0KigCOSW&_r=1" class="social-link"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 Kachi Emmanuel Ministries. All Rights Reserved.</p>
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav ul');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                if (nav.style.display === 'flex') {
+                    nav.style.display = 'none';
+                } else {
+                    nav.style.display = 'flex';
+                    nav.style.flexDirection = 'column';
+                    nav.style.position = 'absolute';
+                    nav.style.top = '100%';
+                    nav.style.left = '0';
+                    nav.style.width = '100%';
+                    nav.style.backgroundColor = 'var(--black)';
+                    nav.style.padding = '1rem';
+                    nav.style.gap = '1rem';
+                }
+            });
+        });
+    </script>
+
+    <script src="devotionals.js"></script>
+    
+    <!-- Floating Donate Button -->
+    <a href="partner.html" class="donate-btn" aria-label="Support our ministry"><i class="fas fa-heart"></i> Support Us</a>
+</body>
+</html>

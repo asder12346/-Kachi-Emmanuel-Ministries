@@ -1,0 +1,371 @@
+/* Animations CSS for Kachi Emmanuel Ministries */
+
+/* Base Animation Properties */
+:root {
+  --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-duration-slow: 1.2s;
+  --animation-duration-medium: 0.8s;
+  --animation-duration-fast: 0.5s;
+  --slide-distance: 40px;
+  --fade-start: 0;
+  --fade-end: 1;
+}
+
+/* Animation Classes */
+
+/* Fade In Animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn var(--animation-duration-medium) var(--animation-timing) forwards;
+}
+
+/* Slide In Animations */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(calc(-1 * var(--slide-distance)));
+  animation: slideInLeft var(--animation-duration-medium) var(--animation-timing) forwards;
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(var(--slide-distance));
+  animation: slideInRight var(--animation-duration-medium) var(--animation-timing) forwards;
+}
+
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(var(--slide-distance));
+  animation: slideInUp var(--animation-duration-medium) var(--animation-timing) forwards;
+}
+
+.slide-in-down {
+  opacity: 0;
+  transform: translateY(calc(-1 * var(--slide-distance)));
+  animation: slideInDown var(--animation-duration-medium) var(--animation-timing) forwards;
+}
+
+/* Scale Animations */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoomIn var(--animation-duration-medium) var(--animation-timing) forwards;
+}
+
+.zoom-out {
+  opacity: 0;
+  transform: scale(1.2);
+  animation: zoomOut var(--animation-duration-medium) var(--animation-timing) forwards;
+}
+
+/* Rotate Animations */
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-15deg) scale(0.8);
+  animation: rotateIn var(--animation-duration-medium) var(--animation-timing) forwards;
+}
+
+/* Bounce Animation */
+.bounce-in {
+  opacity: 0;
+  animation: bounceIn var(--animation-duration-medium) cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+}
+
+/* Flip Animation */
+.flip-in {
+  opacity: 0;
+  transform: perspective(400px) rotateY(90deg);
+  animation: flipIn var(--animation-duration-medium) var(--animation-timing) forwards;
+}
+
+/* Staggered Animation Classes */
+.stagger-item {
+  opacity: 0;
+}
+
+.stagger-fade-in .stagger-item {
+  animation: fadeIn var(--animation-duration-medium) var(--animation-timing) forwards;
+}
+
+.stagger-slide-up .stagger-item {
+  transform: translateY(var(--slide-distance));
+  animation: slideInUp var(--animation-duration-medium) var(--animation-timing) forwards;
+}
+
+/* Delay Classes */
+.delay-100 { animation-delay: 100ms !important; }
+.delay-200 { animation-delay: 200ms !important; }
+.delay-300 { animation-delay: 300ms !important; }
+.delay-400 { animation-delay: 400ms !important; }
+.delay-500 { animation-delay: 500ms !important; }
+.delay-600 { animation-delay: 600ms !important; }
+.delay-700 { animation-delay: 700ms !important; }
+.delay-800 { animation-delay: 800ms !important; }
+.delay-900 { animation-delay: 900ms !important; }
+.delay-1000 { animation-delay: 1000ms !important; }
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: var(--fade-start); }
+  to { opacity: var(--fade-end); }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: var(--fade-start);
+    transform: translateX(calc(-1 * var(--slide-distance)));
+  }
+  to {
+    opacity: var(--fade-end);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: var(--fade-start);
+    transform: translateX(var(--slide-distance));
+  }
+  to {
+    opacity: var(--fade-end);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: var(--fade-start);
+    transform: translateY(var(--slide-distance));
+  }
+  to {
+    opacity: var(--fade-end);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: var(--fade-start);
+    transform: translateY(calc(-1 * var(--slide-distance)));
+  }
+  to {
+    opacity: var(--fade-end);
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: var(--fade-start);
+    transform: scale(0.8);
+  }
+  to {
+    opacity: var(--fade-end);
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOut {
+  from {
+    opacity: var(--fade-start);
+    transform: scale(1.2);
+  }
+  to {
+    opacity: var(--fade-end);
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: var(--fade-start);
+    transform: rotate(-15deg) scale(0.8);
+  }
+  to {
+    opacity: var(--fade-end);
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  20% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  80% {
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flipIn {
+  from {
+    opacity: 0;
+    transform: perspective(400px) rotateY(90deg);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(400px) rotateY(0deg);
+  }
+}
+
+/* Scroll Animation Classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Reveal Variants */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-left.active,
+.reveal-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Section Transition Effects */
+.section-transition {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-transition::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-purple), var(--light-purple));
+  transform: translateX(-100%);
+  transition: transform 0.8s ease;
+  z-index: -1;
+}
+
+.section-transition.active::before {
+  transform: translateX(0);
+}
+
+/* Hover Animation Effects */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+.hover-glow {
+  transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: box-shadow;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+}
+
+/* Pulse Animation */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Floating Animation */
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Shimmer Effect */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(30deg);
+  }
+}
+
+/* Media Queries for Responsive Animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
